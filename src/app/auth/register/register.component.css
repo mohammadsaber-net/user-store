@@ -1,0 +1,36 @@
+.box {
+    background-color: #e3dddd;
+    width: 100%;
+    height: calc(100vh - 65px);
+}
+
+.box form>div {
+    position: relative;
+}
+
+.box form {
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 10px;
+    border: 2px solid #eee;
+}
+
+.req-email {
+    position: absolute;
+    top: 10px;
+    left: -10px;
+}
+
+.sign span {
+    cursor: pointer;
+}
+
+.sign span:hover {
+    text-decoration: underline;
+}
+
+@media(max-width:547px) {
+    .box form {
+        padding: 5px 10px;
+    }
+}

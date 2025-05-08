@@ -1,0 +1,49 @@
+<div class="box d-flex justify-content-center align-items-center">
+    <form [formGroup]="loginform" class="mt-1 align-self-center">
+        <div class="mb-2">
+            @if(loginform.get("user")?.touched && loginform.get("user")?.getError("required")){
+            <span class="req-email position-absolute text-danger fs-2">*</span>
+            }
+            <label for="exampleInputText" class="form-label">user name</label>
+            <input formControlName="user" type="user" class="form-control" id="exampleInputText">
+            @if(loginform.get("user")?.getError("pattern")){
+            <div id="textHelp" class="form-text">only use letters (a -z) or numbers (1-9)</div>
+            }
+        </div>
+        <div class="mb-2">
+            @if(loginform.get("phone")?.touched && loginform.get("phone")?.getError("required")){
+            <span class="req-email position-absolute text-danger fs-2">*</span>
+            }
+            <label for="exampleInputphone" class="form-label">phone number</label>
+            <input formControlName="phone" type="tel" class="form-control" id="exampleInputphone"
+                aria-describedby="phoneHelp">
+            <div id="emailHelp" class="form-text"></div>
+        </div>
+        <div class="mb-2">
+            @if(loginform.get("email")?.touched && loginform.get("email")?.getError("required")){
+            <span class="req-email position-absolute text-danger fs-2">*</span>
+            }
+            <label for="exampleInputEmail" class="form-label">Email Address</label>
+
+            <input formControlName="email" type="email" class="form-control" id="exampleInputEmail"
+                aria-describedby="emailHelp">
+            @if(loginform.get("email")?.getError("email")){
+            <div id="emailHelp" class="form-text">invalid email you should use &#64;</div>
+            }
+        </div>
+        <div class="mb-2">
+            @if(loginform.get("password")?.touched && loginform.get("password")?.getError("required")){
+            <span class="req-email position-absolute text-danger fs-2">*</span>
+            }
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1">
+            @if(loginform.get("password")?.getError("pattern")){
+            <div class="form-text">password should start with letters <br> and end by numbers not less than 3
+            </div>
+            }
+        </div>
+        <button [disabled]="loginform.invalid" (click)="check()" type="submit" class="btn btn-primary">register</button>
+        <div class="sign">do you have an account ? <span class="text-primary" (click)="login()">sign in</span>
+        </div>
+    </form>
+</div>

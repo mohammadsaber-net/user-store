@@ -1,0 +1,12 @@
+.container {
+    background-color: #fbf7f7;
+}
+
+.header {
+    position: relative;
+
+}
+
+.logout {
+    cursor: pointer;
+}

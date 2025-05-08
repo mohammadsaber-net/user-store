@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+.sub-container {
+    min-height: 100vh;
+}
+
+.pad-80 {
+    padding-top: 80px;
+}

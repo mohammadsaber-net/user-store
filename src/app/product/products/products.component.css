@@ -1,0 +1,10 @@
+.main .search input {
+    width: 200px;
+    border: 1px solid #dcdbdb;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.main .search input:focus {
+    outline: rgb(66, 192, 173);
+}

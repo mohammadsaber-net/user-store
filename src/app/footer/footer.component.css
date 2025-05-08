@@ -1,0 +1,49 @@
+footer {
+    height: 100%;
+}
+
+.social i {
+    cursor: pointer;
+    color: white;
+    padding: 5px;
+    border-radius: 4px;
+    background-color: rgb(146, 146, 146);
+}
+
+.social .face:hover {
+    color: #4267B2;
+    background-color: white;
+}
+
+.social .twitt:hover {
+    color: #1DA1F2;
+    background-color: white;
+
+}
+
+.social .you:hover {
+    color: #FF0000;
+    background-color: white;
+}
+
+address p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+address p i {
+    color: #1bff0a;
+}
+
+@media(max-width:671px) {
+    footer {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    address p {
+        margin-bottom: 10px;
+    }
+}

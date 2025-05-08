@@ -1,0 +1,92 @@
+.box {
+    width: 400px;
+    margin: auto;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    padding: 20px 10px;
+    background-color: beige
+}
+
+label {
+    width: 150px;
+}
+
+.box .send {
+    display: block;
+    border: none;
+    padding: 6px 30px;
+    text-align: center;
+    border-radius: 6px;
+    margin: 0 0 0 auto;
+}
+
+.dilev {
+    background-color: white;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    background-color: #1c1a1a37;
+}
+
+.popup {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 350px;
+    /* height: 300px; */
+    padding: 10px;
+    transition: 0.3;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: rgb(255, 255, 255);
+    border: #ddd solid 2px;
+    box-shadow: 0px 7px 15px rgb(204, 203, 203);
+}
+
+table {
+    border: 1px solid #eee;
+}
+
+td,
+th {
+    padding: 5px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+.product img {
+    width: 50px;
+    height: 50px;
+}
+
+.close {
+    padding: 4px 30px;
+    width: fit-content;
+    background-color: rgb(231, 91, 91);
+    color: white;
+    border-radius: 6px;
+    margin: 0 0 0 auto;
+    cursor: pointer;
+    font-size: 20px;
+
+}
+
+@media (max-width:547px) {
+    .box {
+        width: fit-content;
+    }
+
+    .box label {
+        font-size: 13px;
+        width: 120px;
+    }
+}

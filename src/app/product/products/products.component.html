@@ -1,0 +1,17 @@
+<div class="">
+    <div class="row main">
+        <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="rgb(87, 203, 211)" type="square-spin"
+            [fullScreen]="true">
+            <p style="color: rgb(87, 203, 211);text-transform: uppercase;letter-spacing: 2px;"> Loading... </p>
+        </ngx-spinner>
+        <div class="search input-group  mt-4">
+            <label class="input-group-text text-success" for="searching">search</label>
+            <input class="" (input)="getValue($event)" type="text" name="" id="searching">
+        </div>
+        @for(product of allProducts|search:value ;track product){
+        <div class="col-md-6 col-lg-4 col-xl-3 g-3">
+            <app-oneproduct [item]="product"></app-oneproduct>
+        </div>
+        }
+    </div>
+</div>

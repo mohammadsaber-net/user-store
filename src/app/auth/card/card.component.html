@@ -1,0 +1,66 @@
+<div class="mt-4">
+    <div class="text-info fs-5">now the only available method of payment is by visa <i class="fa-cc-visa"></i></div>
+    <div class="box">
+        <h2 class="text-info mt-0 mb-3">credit card information</h2>
+        <form [formGroup]="loginform">
+            <div class="input-group mb-3">
+                <label class=" input-group-text text-success" for="inputGroupSelect01">select your bank</label>
+                <select formControlName="bank" class="text-primary form-select" id="inputGroupSelect01">
+                    <option selected value="egypt"><span>egypt</span><i class="fa-brands fa-cc-visa"></i></option>
+                    <option value="alexandria">alexandria</option>
+                    <option value="cairo">cairo</option>
+                    <option value="cib">cib</option>
+                </select>
+            </div>
+            <div class="mb-3 input-group">
+
+                <label for="staticCredit" class=" input-group-text">credit number</label>
+
+                <input maxlength="14" formControlName="credit" type="text" placeholder="7561 **** **** ****"
+                    class="form-control" id="staticCredit" value="">
+            </div>
+            <div class="mb-3 input-group">
+                <label for="inputnum" class=" input-group-text">3 numbers in back</label>
+                <input maxlength="3" formControlName="numbers" type="text" placeholder="***" class="form-control"
+                    id="inputnum">
+            </div>
+            <button [disabled]="loginform.invalid" (click)="confirm()" class="send text-white bg-primary">confirm
+            </button>
+        </form>
+
+    </div>
+
+</div>
+@if (confirmed) {
+<div class="content">
+    <div class="popup text-start">
+        <table class="w-100">
+            <thead>
+                <tr>
+                    <th>image</th>
+                    <th>title</th>
+                    <th>amount</th>
+                </tr>
+            </thead>
+            @for(item of show;track item;){
+            <tbody>
+                <tr class="product">
+                    <td><img [src]="item.prod.image" alt=""></td>
+                    <td class="text-info">{{item.prod.title}} EGP</td>
+                    <td class="title text-primary">{{item.amount}}</td>
+                </tr>
+            </tbody>
+            }
+            <tfoot>
+                <tr>
+                    <td class="fs-4" colspan=" 4">total price : <span class="text-primary">{{total}} EGP</span></td>
+
+                </tr>
+            </tfoot>
+        </table>
+        <small>order will arrive you in 24 h</small>
+        <h3 class="text-success">thanks for using our store</h3>
+        <div (click)="close()" class="close">close</div>
+    </div>
+</div>
+}

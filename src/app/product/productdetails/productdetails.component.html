@@ -1,0 +1,10 @@
+<div class="container sub-container">
+    <div class="text-center">
+        <img [src]="product[0].image" alt="">
+        <div class="info">
+            <p class="mb-0"><span class="fs-4">title : </span>{{product[0].title}}</p>
+            <p class="mb-1"><span class="fs-4">description : </span>{{product[0].description}}</p>
+            <div class="bg-success text-white w-50 m-auto p-1 fs-3">{{product[0].price | currency :" EGP "}}</div>
+        </div>
+    </div>
+</div>

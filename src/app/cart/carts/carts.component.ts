@@ -75,6 +75,7 @@ export class CartsComponent implements OnInit {
       if (email === this.emailValue) {
         this.toaster.success("valid email address")
         this.notAUser = false
+        localStorage.setItem("cart", "true")
         this.router.navigate(["/payment"])
       } else {
         this.notAUser = true

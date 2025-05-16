@@ -63,6 +63,7 @@ export class CardComponent implements OnInit {
     this.toaster.success("order confirmed")
     localStorage.removeItem("carts")
     localStorage.removeItem("order")
+    localStorage.removeItem("cart")
     this.router.navigate(["/products"])
 
   }

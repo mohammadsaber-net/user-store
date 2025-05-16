@@ -9,3 +9,12 @@ export const gaurdGuard: CanActivateFn = (route, state) => {
     return true
   }
 };
+export const cartGuard: CanActivateFn = (route, state) => {
+  let router = inject(Router)
+  if (localStorage.getItem("cart")) {
+    return true;
+  } else {
+    router.navigate(["/product"])
+    return false
+  }
+};

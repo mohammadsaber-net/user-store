@@ -1,0 +1,19 @@
+
+
+label {
+    width: 150px;
+}
+
+.box .send {
+    display: block;
+    border: none;
+    padding: 6px 30px;
+    text-align: center;
+    border-radius: 6px;
+    margin: 0 0 0 auto;
+}
+@media (max-width:547px){
+    label{
+        display: block;
+    }
+}

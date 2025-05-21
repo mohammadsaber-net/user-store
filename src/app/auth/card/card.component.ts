@@ -3,60 +3,44 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { carts } from '../../interface';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { CashComponent } from '../cash/cash.component';
+import { VisaComponent } from '../visa/visa.component';
 
 @Component({
   selector: 'app-card',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,CashComponent,VisaComponent],
   templateUrl: './card.component.html',
   styleUrl: './card.component.css'
 })
-export class CardComponent implements OnInit {
+export class CardComponent  {
   constructor(private toaster: ToastrService) { }
   router = inject(Router)
+  items:any
+  chosePaymentWay:string=""
   show: carts[] = []
   clientInfo: any = []
   total: number = 0
   confirmed: boolean = false
-  ngOnInit(): void {
-    this.showProduct()
-  }
-  loginform: FormGroup = new FormGroup({
-    bank: new FormControl(null, [
-      Validators.required
-    ]),
-    credit: new FormControl(null, [
-      Validators.required
-    ]),
-    numbers: new FormControl(null, [
-      Validators.required
-    ]),
-  })
-  showProduct() {
-    this.total = 0
-    this.show = JSON.parse(localStorage.getItem("carts")!)
-    for (let x in this.show) {
-      this.total += Math.round(this.show[x].prod.price * this.show[x].amount)
-    }
-  }
-  confirm() {
-    if (localStorage.getItem("carts")) {
-      let items = JSON.parse(localStorage.getItem("carts")!)
-      for (let x in items) {
+  cartVisa(event:any){
+    this.items =event
+    let item=this.items[0]
+      for (let x in item) {
         this.clientInfo.push({
-          id: items[x].prod.id,
-          title: items[x].prod.title,
-          amount: items[x].amount
+          id: item[x].prod.id,
+          title: item[x].prod.title,
+          amount: item[x].amount
         })
       }
-      this.clientInfo.push({ card: this.loginform.value })
+      this.clientInfo.push({ card: this.items[1] })
       let user: number = JSON.parse(localStorage.getItem("user")!)[0].userid
-      this.clientInfo.push({ user: user })
+      this.clientInfo.push({user})
       localStorage.setItem("order", JSON.stringify(this.clientInfo))
-      this.confirmed = true
-    } else {
-      this.toaster.error("cart are empty you need to buy something")
+      this.total = 0
+    this.show = this.items[0]
+    for (let x in this.items[0]) {
+      this.total += Math.round(this.items[0][x].prod.price * this.items[0][x].amount)
     }
-
+      this.confirmed = true
   }
   close() {
     this.confirmed = !this.confirmed
@@ -67,4 +51,9 @@ export class CardComponent implements OnInit {
     this.router.navigate(["/products"])
 
   }
+  
+  payment(event:Event){
+    this.chosePaymentWay =(event.target as HTMLInputElement).value
+  }
+
 }

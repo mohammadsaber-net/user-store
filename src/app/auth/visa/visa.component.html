@@ -1,0 +1,30 @@
+<div class="p-3">
+    <div class="box">
+        <h2 class="text-info mt-0 mb-3">credit card information</h2>
+        <form [formGroup]="loginform">
+            <div class="mb-3">
+                <label class="text-success" for="inputGroupSelect01">select your bank</label>
+                <select formControlName="bank" class="text-primary form-select" id="inputGroupSelect01">
+                    <option selected value="egypt"><span>egypt</span><i class="fa-brands fa-cc-visa"></i></option>
+                    <option value="alexandria">alexandria</option>
+                    <option value="cairo">cairo</option>
+                    <option value="cib">cib</option>
+                </select>
+            </div>
+            <div class="mb-3">
+
+                <label for="staticCredit" class="text-success">credit number</label>
+
+                <input maxlength="14" formControlName="credit" type="text" placeholder="7561 **** **** ****"
+                    class="form-control" id="staticCredit" value="">
+            </div>
+            <div class="mb-3">
+                <label for="inputnum" class="text-success">3 numbers in back</label>
+                <input maxlength="3" formControlName="numbers" type="text" placeholder="***" class="form-control"
+                    id="inputnum">
+            </div>
+            <button [disabled]="loginform.invalid" (click)="confirm()" class="send text-white bg-primary">confirm
+            </button>
+        </form>
+    </div>
+</div>

@@ -1,5 +1,5 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Component, inject,  } from '@angular/core';
+import { ReactiveFormsModule, } from '@angular/forms';
 import { carts } from '../../interface';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
@@ -49,11 +49,13 @@ export class CardComponent  {
     localStorage.removeItem("order")
     localStorage.removeItem("cart")
     this.router.navigate(["/products"])
-
   }
   
   payment(event:Event){
     this.chosePaymentWay =(event.target as HTMLInputElement).value
+  }
+  changeCss(radio:Event){
+    let parent=(radio.target as HTMLInputElement).parentElement
   }
 
 }

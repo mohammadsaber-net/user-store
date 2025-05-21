@@ -2,7 +2,7 @@
     position: relative;
     border: 2px solid #ddd;
     border-radius: 10px;
-    margin-top: 50px;
+    margin-top: 15px;
 }
 .cash input,
 .visa input{
@@ -14,28 +14,6 @@
     cursor: pointer;
     color: #415eee;
 }
-/* .box {
-    width: 400px;
-    margin: auto;
-    border: 2px solid #eee;
-    border-radius: 10px;
-    padding: 20px 10px;
-    background-color: beige
-}
-
-label {
-    width: 150px;
-}
-
-.box .send {
-    display: block;
-    border: none;
-    padding: 6px 30px;
-    text-align: center;
-    border-radius: 6px;
-    margin: 0 0 0 auto;
-} */
-
 .dilev {
     background-color: white;
     margin-top: 20px;
@@ -70,14 +48,3 @@ th {
     font-size: 20px;
 
 }
-
-/* @media (max-width:547px) {
-    .box {
-        width: fit-content;
-    }
-
-    .box label {
-        font-size: 13px;
-        width: 120px;
-    }
-} */

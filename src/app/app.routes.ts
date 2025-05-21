@@ -5,6 +5,7 @@ import { ProductdetailsComponent } from './product/productdetails/productdetails
 import { RegisterComponent } from './auth/register/register.component';
 import { CardComponent } from './auth/card/card.component';
 import { cartGuard, gaurdGuard } from './gaurd.guard';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: "products", pathMatch: "full" },
@@ -13,5 +14,5 @@ export const routes: Routes = [
     { path: "payment", canActivate: [cartGuard], component: CardComponent, title: "payment" },
     { path: "carts", component: CartsComponent, title: "carts" },
     { path: "productdetails/:id", component: ProductdetailsComponent, title: "products" },
-    { path: "**", component: ProductsComponent, title: "products" }
+    { path: "**", component: NotFoundComponent, title: "invalid" },
 ];

@@ -2,14 +2,14 @@
 <div class="selection text-info fs-4">
     please select your payment method....
 </div>
-<div class="d-flex text-center gap-5">
+<div class="d-flex justify-content-center flex-column">
     <label for="cash" class="cash">
-        cash
-        <input (change)="payment($event)" type="radio" id="cash" name="method" value="cash">
+         cash @if(chosePaymentWay==="cash"){<i class="fa-solid fa-check ms-1"></i>}
+        <input (input)="payment($event)" type="radio" id="cash" name="method" value="cash">
     </label>
     <label  for="visa" class="visa">
-        visa
-        <input (change)="payment($event)" type="radio" id="visa" name="method" value="visa">
+         visa @if(chosePaymentWay==="visa"){<i class="fa-solid fa-check ms-1"></i>}
+        <input (input)="payment($event)" type="radio" id="visa" name="method" value="visa">
     </label>
 </div>
 @switch (chosePaymentWay) {

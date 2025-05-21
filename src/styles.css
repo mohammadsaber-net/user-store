@@ -1,4 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+/* @import "https: //fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Italianno&display=swap" */
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Italianno&display=swap");
+
+*{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+body{
+    margin: 0;
+    font-family: "Cairo", sans-serif;
+}
 .sub-container {
     min-height: 100vh;
 }

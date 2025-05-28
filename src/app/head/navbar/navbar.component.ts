@@ -21,18 +21,9 @@ export class NavbarComponent implements OnInit {
       this.active = true
     }
   }
-  register() {
+  register(event:Event) {
+    (event.target as HTMLAnchorElement).innerHTML="sign Up"
     localStorage.removeItem("user")
     this.router.navigate(["/register"])
-  }
-  onActivate(event: any) {
-    let scrollToTop = window.setInterval(() => {
-      let pos = window.pageYOffset;
-      if (pos > 0) {
-        window.scrollTo(0, pos - 20);
-      } else {
-        window.clearInterval(scrollToTop);
-      }
-    }, 16);
   }
 }

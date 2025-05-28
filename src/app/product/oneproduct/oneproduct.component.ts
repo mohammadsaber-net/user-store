@@ -3,6 +3,7 @@ import { CurrencyPipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ProductService } from '../product.service';
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-oneproduct',
@@ -12,11 +13,10 @@ import { ProductService } from '../product.service';
 })
 export class OneproductComponent {
   constructor(private http: ProductService) { }
-  // product: any
   @Output() productcount: EventEmitter<any> = new EventEmitter()
   active: boolean = true
   items: any[] = []
-  amount: number = 0
+  amount: number=0;
   @Input() item: any = []
   changeToAmount() {
     this.active = false
@@ -37,8 +37,14 @@ export class OneproductComponent {
     }
     this.changeToCart(this.amount)
   }
-
+ takeVal(event:Event){
+  let value=+(event.target as HTMLInputElement).value
+  this.amount= value
+ }
   send(item: any) {
+    // if (!isNaN(this.amount)){
+
+    // }
     if (localStorage.getItem("carts")) {
       this.items = JSON.parse(localStorage.getItem("carts")!)
       let count = this.items.filter(el => el.prod.id !== item.id)

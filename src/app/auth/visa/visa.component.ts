@@ -16,10 +16,10 @@ export class VisaComponent {
       Validators.required
     ]),
     credit: new FormControl(null, [
-      Validators.required
+      Validators.required,Validators.pattern(/^[1-9]{14}$/)
     ]),
     numbers: new FormControl(null, [
-      Validators.required
+      Validators.required,Validators.pattern(/^[1-9]{3}$/)
     ]),
   })
   confirm() {

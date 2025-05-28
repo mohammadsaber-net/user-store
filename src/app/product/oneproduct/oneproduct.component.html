@@ -1,6 +1,6 @@
 <div class="card box">
     <img routerLink="/productdetails/{{item.id}}" [src]="item.image" alt="">
-    <h4 routerLink="/productdetails/{{item.id}}" class="title">{{item.title}}</h4>
+    <h4 class="title">{{item.title}}</h4>
     <div class="text-info fs-4 d-flex justify-content-between p-2 flex-wrap">
         <span class="price">{{item.price|currency:"EGP"}}</span>
         <span class="rate"><span class="text-dark">Rating : </span>{{item.rating.rate}}</span>
@@ -9,8 +9,8 @@
         </div>
         }@else{
         <div class="w-75 count d-flex justify-content-center">
-            <span (click)="handlecount('plus');send(item)">+</span>
-            <input [(ngModel)]="amount" class="text-center" type="text" name="" id="">
+            <span (click)="handlecount('plus');send(item)" class="text-center">+</span>
+            <input [(ngModel)]="amount" (blur)="takeVal($event);send(item)" class="text-center" type="number">
             @if(amount===1){
             <span (click)="handlecount('minus');changeToCart($event);send(item)"><i
                     class="fa-solid fa-trash text-danger"></i></span>

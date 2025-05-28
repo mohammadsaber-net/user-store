@@ -16,7 +16,7 @@ export class CardComponent  {
   constructor(private toaster: ToastrService) { }
   router = inject(Router)
   items:any
-  chosePaymentWay:string=""
+  chosePaymentWay:string="visa"
   show: carts[] = []
   clientInfo: any = []
   total: number = 0

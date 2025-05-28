@@ -41,10 +41,15 @@ export class CartsComponent implements OnInit {
       this.totalPrice += Math.round(this.cartProduct[i].prod.price * this.cartProduct[i].amount)
     }
   }
-  handlecount(event: string, index: number) {
-    if (event == "plus") {
+  handlecount(event: string, index: number,ev:Event) {
+    if (event === "plus") {
       this.cartProduct[index].amount++
-    } else {
+    }else if(event==="blur") {
+      this.cartProduct[index].amount=+(ev.target as HTMLInputElement).value
+      if(this.cartProduct[index].amount < 1){
+        this.cartProduct.splice(index, 1)
+      }
+    }else {
       if (this.cartProduct[index].amount > 1) {
         this.cartProduct[index].amount--
       } else {

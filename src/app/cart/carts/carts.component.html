@@ -47,9 +47,9 @@
                 <td class="title text-primary">{{item.prod.title}}</td>
                 <td>
                     <div class="count d-flex justify-content-center">
-                        <span (click)="handlecount('plus',index)">+</span>
-                        <input [(ngModel)]="item.amount" class=" text-center" type="text" name="" id="">
-                        <span (click)="handlecount('minus',index)">-</span>
+                        <span (click)="handlecount('plus',index,$event)">+</span>
+                        <input [(ngModel)]="item.amount" (blur)="handlecount('blur',index,$event)" class=" text-center" type="text" name="" id="">
+                        <span (click)="handlecount('minus',index,$event)">-</span>
                     </div>
                 </td>
                 <td class="text-info">{{item.prod.price * item.amount}} EGP</td>

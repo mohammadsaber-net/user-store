@@ -6,7 +6,7 @@
         <label for="email">add your email</label>
         <input (input)="takeEmail($event)" id="email" class="form-control" type="email">
         @if(notAUser){
-        <small>invalid email you can <span (click)="register()" class="text-primary">sign
+        <small>invalid email you can <span (click)="register()" class="invalid text-primary">sign
                 up</span></small>
         }
         <button (click)="setOrder()" class="w-100 bg-warning border border-pill mt-1">continue</button>

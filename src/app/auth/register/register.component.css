@@ -1,5 +1,4 @@
 .box {
-    background-color: #e3dddd;
     width: 100%;
     height: calc(100vh - 65px);
 }
@@ -33,4 +32,9 @@
     .box form {
         padding: 5px 10px;
     }
+}
+.show{
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
 }

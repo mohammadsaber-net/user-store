@@ -29,7 +29,9 @@
 .popup .signin span {
     cursor: pointer;
 }
-
+.invalid{
+    cursor: pointer;
+}
 .clear {
     display: block;
     width: 100px;

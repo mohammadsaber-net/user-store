@@ -54,8 +54,5 @@ export class CardComponent  {
   payment(event:Event){
     this.chosePaymentWay =(event.target as HTMLInputElement).value
   }
-  changeCss(radio:Event){
-    let parent=(radio.target as HTMLInputElement).parentElement
-  }
 
 }

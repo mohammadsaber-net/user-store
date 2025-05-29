@@ -15,9 +15,11 @@
             <span class="req-email position-absolute text-danger fs-2">*</span>
             }
             <label for="exampleInputphone" class="form-label">phone number</label>
-            <input formControlName="phone" type="number" class="form-control" id="exampleInputphone"
+            <input formControlName="phone" type="tel" class="form-control" id="exampleInputphone"
                 aria-describedby="phoneHelp">
-            <div id="emailHelp" class="form-text"></div>
+            @if(loginform.get("phone")?.getError("pattern")){
+            <div id="phoneHelp" class="form-text text-danger">invalid phone number</div>
+            }
         </div>
         <div class="mb-2">
             @if(loginform.get("email")?.touched && loginform.get("email")?.getError("required")){
@@ -36,7 +38,16 @@
             <span class="req-email position-absolute text-danger fs-2">*</span>
             }
             <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1">
+            <div class="position-relative">
+                <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1">
+                <div class="show position-absolute" (click)="showPassword()">
+                    @if(show){
+                    <i class="fa-solid fa-eye"></i>
+                    }@else{
+                    <i class="fa-solid fa-eye-slash"></i>
+                    }
+                </div>
+            </div>
             @if(loginform.get("password")?.getError("pattern")){
             <div class="form-text">password should start with letters <br> and end by numbers not less than 3
             </div>

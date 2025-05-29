@@ -15,7 +15,7 @@
 
                 <label for="staticCredit" class="text-success">credit number</label>
 
-                <input formControlName="credit" type="number" placeholder="7561 **** **** ****"
+                <input formControlName="credit" type="tel" placeholder="7561 **** **** ****"
                     class="form-control" id="staticCredit" value="">
                     @if (loginform.get("credit")?.getError("pattern")) {
                         <small class="text-danger">it should be 14 number</small>
@@ -23,7 +23,7 @@
             </div>
             <div class="mb-3">
                 <label for="inputnum" class="text-success">3 numbers in back</label>
-                <input formControlName="numbers" type="number" placeholder="***" class="form-control"
+                <input formControlName="numbers" type="tel" placeholder="***" class="form-control"
                     id="inputnum">
                     @if (loginform.get("numbers")?.getError("pattern")) {
                     <small class="text-danger">it should be 3 numbers</small>

@@ -14,13 +14,14 @@ export class RegisterComponent {
   constructor(
     private toaster: ToastrService,
   ) { }
-
+  show: boolean = false
   router = inject(Router)
   loginform: FormGroup = new FormGroup({
     user: new FormControl(null, [Validators.required
       , Validators.pattern(/^[a-zA-Z]{3,10}[1-9]{3,10}$/)
     ]),
     phone: new FormControl(null, [Validators.required
+      , Validators.pattern(/^[0-9]{6,}$/)
     ]),
     email: new FormControl(null,
       [Validators.required, Validators.email]),
@@ -39,5 +40,14 @@ export class RegisterComponent {
   }
   login() {
     this.toaster.info("not avilable now due to database ")
+  }
+  showPassword() {
+    this.show = !this.show
+    let passwordInput = document.getElementById("exampleInputPassword1") as HTMLInputElement;
+    if (this.show) {
+      passwordInput.type = "text";
+    } else {
+      passwordInput.type = "password";
+    }
   }
 }

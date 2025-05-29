@@ -10,7 +10,7 @@
         }@else{
         <div class="w-75 count d-flex justify-content-center">
             <span (click)="handlecount('plus');send(item)" class="text-center">+</span>
-            <input [(ngModel)]="amount" (blur)="takeVal($event);send(item)" class="text-center" type="number">
+            <input [(ngModel)]="amount" (blur)="takeVal($event);send(item)" class="text-center" type="tel">
             @if(amount===1){
             <span (click)="handlecount('minus');changeToCart($event);send(item)"><i
                     class="fa-solid fa-trash text-danger"></i></span>

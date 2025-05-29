@@ -28,23 +28,24 @@ export class OneproductComponent {
     }
   }
   handlecount(event: string) {
-    if (event == "plus") {
-      this.amount++
-    } else if (event == "minus") {
-      if (this.amount > 0) {
-        this.amount--
+    if(!isNaN(this.amount)){
+      if (event == "plus") {
+        this.amount++
+      } else if (event == "minus") {
+        if (this.amount > 0) {
+          this.amount--
+        }
       }
-    }
-    this.changeToCart(this.amount)
+      this.changeToCart(this.amount)
+    }  
   }
  takeVal(event:Event){
   let value=+(event.target as HTMLInputElement).value
+  if(!isNaN(value)){ 
   this.amount= value
+  }
  }
   send(item: any) {
-    // if (!isNaN(this.amount)){
-
-    // }
     if (localStorage.getItem("carts")) {
       this.items = JSON.parse(localStorage.getItem("carts")!)
       let count = this.items.filter(el => el.prod.id !== item.id)
